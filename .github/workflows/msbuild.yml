@@ -28,7 +28,7 @@ jobs:
       run: |
         choco install -y nuget.commandline
         choco install -y windowsdriverkit10
-     #   choco install -y windows-sdk-10.1
+        choco install -y windows-sdk-8.1
     - name: Build
      # working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
@@ -38,7 +38,7 @@ jobs:
         nuget restore
         msbuild haxm.sln /p:Configuration="Debug" /p:Platform="Win32"
         msbuild haxm.sln /p:Configuration="Debug" /p:Platform="x64"
-        build/tests/x64/Debug/haxm-tests.exe
+        ./build/tests/x64/Debug/haxm-tests.exe
    #     export PATH="$PATH:/c/Program Files (x86)/Microsoft Visual Studio/Installer/"
     #    export MSVC=$(vswhere -latest -products "*" -requires Microsoft.Component.MSBuild -property installationPath)
     #    export MSVC=$(echo /$MSVC | sed -e 's/\\/\//g' -e 's/://')
