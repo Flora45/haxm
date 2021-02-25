@@ -28,9 +28,9 @@ jobs:
       run: |
         choco install -y nuget.commandline
         choco install -y windowsdriverkit10
-        choco install -y windows-sdk-10.1
+     #   choco install -y windows-sdk-10.1
     - name: Build
-      working-directory: ${{env.GITHUB_WORKSPACE}}
+     # working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: |
