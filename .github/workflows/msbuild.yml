@@ -28,7 +28,8 @@ jobs:
       run: |
         choco install -y nuget.commandline
         choco install -y windowsdriverkit10
-        choco install -y windows-sdk-10.1
+        choco install -y windows-sdk-8.1
+        #windows-sdk-10.1 could not be installed so leverage 8.1 instead here.
     - name: Build
      # working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
@@ -39,12 +40,12 @@ jobs:
         msbuild haxm.sln /p:Configuration="Debug" /p:Platform="Win32"
         msbuild haxm.sln /p:Configuration="Debug" /p:Platform="x64"
         ./build/tests/x64/Debug/haxm-tests.exe
-   #     export PATH="$PATH:/c/Program Files (x86)/Microsoft Visual Studio/Installer/"
+    #    export PATH="$PATH:/c/Program Files (x86)/Microsoft Visual Studio/Installer/"
     #    export MSVC=$(vswhere -latest -products "*" -requires Microsoft.Component.MSBuild -property installationPath)
     #    export MSVC=$(echo /$MSVC | sed -e 's/\\/\//g' -e 's/://')
-     #   export PATH="$PATH:$MSVC/MSBuild/15.0/Bin/"
+    #    export PATH="$PATH:$MSVC/MSBuild/15.0/Bin/"
     #    unzip "/c/Program Files (x86)/Windows Kits/10/Vsix/WDK.vsix" -d wdk
     #    cp -R wdk/\$VCTargets/* "$MSVC/Common7/IDE/VC/VCTargets"
     #    export PROPS="//p:SpectreMitigation=false"
 
-        # msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+    #    msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
