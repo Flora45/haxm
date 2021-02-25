@@ -15,8 +15,6 @@ jobs:
   my_first_job: 
     name: Windows build
     runs-on: windows-latest
-  build:
-    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
