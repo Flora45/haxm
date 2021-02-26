@@ -52,6 +52,7 @@ jobs:
   my_second_job:
     name: Mac build
     runs-on: macos-10.15
+    # It is pity no previous versions of Mac OSes could be selected but HAXM build rely on the Xcodebuild10.12 and prior.
     steps:
     - uses: actions/checkout@v2
 #    - name: Add Xcodebuild from Marketplace
@@ -63,4 +64,4 @@ jobs:
     - name: Mac darwin build
       run: |
         cd platforms/darwin
-        xcodebuild -configuration Debug -sdk macosx10.12
+        xcodebuild -configuration Debug -sdk macosx10.13
