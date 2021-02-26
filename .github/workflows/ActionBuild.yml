@@ -54,6 +54,8 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Add Xcodebuild to PATH
+      uses: sersoft-gmbh/xcodebuild-action@v1.3
 
    # - name: Restore NuGet packages
       #working-directory: ${{env.GITHUB_WORKSPACE}}
