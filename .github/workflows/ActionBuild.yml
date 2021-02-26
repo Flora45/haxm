@@ -63,4 +63,4 @@ jobs:
     - name: Mac darwin build
       run: |
         cd platforms/darwin
-        xcodebuild -configuration Debug -sdk macosx
+        xcodebuild -configuration Debug -sdk macosx10.12
